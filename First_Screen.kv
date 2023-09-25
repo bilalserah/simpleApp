@@ -1,0 +1,106 @@
+#:import get_color_from_hex kivy.utils.get_color_from_hex
+FirstScreen :
+	name : "FirstScreen "
+	MDBoxLayout:
+        orientation: 'vertical'
+	    size_hint : 1,1
+	    md_bg_color : get_color_from_hex('#ffffff')
+	    Carousel :
+            id: carousel
+            MDFloatLayout:
+                orientation : "vertical"
+                size_hint : 1,1
+				Image :
+					source :"images/product-banner.jpg"
+					size_hint : 0.8,0.8
+					pos_hint : {'center_x' : 0.5 ,'center_y':0.7}
+
+				Label :
+					text : app.convert_Arab("استمتع وشاهد احسن المنتوجات في           \nبلادك الجزائر باسعار متنافسة          \n  مع تطبيق        ")
+					markup : True
+					font_name : 'font_01'
+				    font_size :'20sp'
+					size_hint: 0.8,0.8
+					bold :False
+					halign: "center"
+					pos_hint_x:{'center_x':0.5 , 'center_y' : 0.5}
+					color : get_color_from_hex('#454544')
+				line :
+
+
+			MDFloatLayout:
+                orientation : "vertical"
+                size_hint : 1,1
+				Image :
+					source :"images/image02.jpg"
+					size_hint : 0.9,0.9
+					pos_hint : {'center_x' : 0.5 ,'center_y':0.7}
+
+				Label :
+					text : app.convert_Arab("      \n   يسعدنا انه يمكنك التعامل مع زبائن              \nالكرام بكل ارياحية مع الحفاظ           \nعلى خصوصيتك           ")
+					markup : True
+					font_name : 'font_01'
+				    font_size :'20sp'
+					size_hint: 0.8,0.8
+					bold :False
+					halign: "center"
+					pos_hint_x:{'center_x':0.5 , 'center_y' : 0.5}
+					color : get_color_from_hex('#454544')
+				line :
+			MDFloatLayout:
+                orientation : "vertical"
+                size_hint : 1,1
+				Image :
+					source :"images/image03.jpg"
+					size_hint : 1,1
+					pos_hint : {'center_x' : 0.5 ,'center_y':0.83}
+
+				Label :
+					text : app.convert_Arab("ابدا وتعرف على المزيد من خلال            \n تجربتك مع تطبيقنا وشاركنا              \n رايك                ")
+					markup : True
+					font_name : 'font_01'
+				    font_size :'20sp'
+					size_hint: 0.8,0.8
+					bold :False
+					halign: "center"
+					pos_hint_x:{'center_x':0.5 , 'center_y' : 0.5}
+					color : get_color_from_hex('#454544')
+				line :
+
+				Button
+                    text : app.convert_Arab("ابدا")
+                    background_color : 0,0,0,0
+                    font_name : 'font_01'
+                    font_size :'20sp'
+                    size_hint :0.9,0.075
+                    pos_hint : {"center_x": 0.5,'center_y': 0.2}
+                    on_release :
+                        root.manager.transition.direction ='left'
+                        root.manager.current ='SecondScreen'
+                    canvas.before :
+                        Color :
+                            rgb : rgba(9,90,17,255)
+                        RoundedRectangle :
+                            size : self.size
+                            pos : self.pos
+                            radius : [20]
+
+<line@MDBoxLayout>:
+	orientation : "vertical"
+	#md_bg_color : rgba(9,90,17,255)
+    size_hint : 1,0.1
+	padding : [0,0,0,dp(30)]
+	spacing : dp(-50)
+	MDBoxLayout :
+	    md_bg_color : rgba(9,90,100,255)
+	    size_hint : 0.5,0.023
+	    height : "3dp"
+	    pos_hint : {"center_x": 0.5,"center_y": 1}
+	MDLabel :
+        id :slide0
+        text :"..."
+        size_hint : 1 ,0.5
+        color :rgba(9,90,100,255)
+        pos_hint : {"center_x":0.5}
+        halign : 'center'
+        font_size :"70sp"

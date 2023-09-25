@@ -1,0 +1,57 @@
+#:import get_color_from_hex kivy.utils.get_color_from_hex
+SecondScreen01 :
+	name : "SecondScreen01"
+	MDBoxLayout :
+		orientation : "vertical"
+		MDBoxLayout :
+			orientation : "vertical"
+			md_bg_color  : get_color_from_hex("#ffffff")
+			size_hint : 1,0.5
+			Image :
+				size_hint : 1,1
+				source : "images/image04.jpg"
+		MDBoxLayout :
+			orientation : "vertical"
+			md_bg_color  : get_color_from_hex("#ffffff")
+			size_hint : 1,0.2
+			MDLabel :
+				text : app.convert_Arab("    مرحبا!        ")
+				markup : True
+				font_name : 'font_01'
+			    font_size :'40sp'
+				size_hint: 0.8,0.8
+				bold :True
+				halign: "center"
+				color : "black"
+			Label :
+				text : app.convert_Arab("أفضل مكان لكتابة قصص الحياة            \nومشاركة تجارب رحلتك            ")
+				markup : True
+				font_name : 'font_01'
+			    font_size :'20sp'
+				size_hint: 0.8,0.8
+				bold :True
+				halign: "center"
+				color : get_color_from_hex('#454544')
+		MDBoxLayout :
+			orientation : "vertical"
+			md_bg_color : get_color_from_hex("#ffffff")
+			size_hint : 1,0.3
+			spacing : dp(20)
+			padding : [0,0,0,dp(40)]
+			MDRaisedButton:
+			    text: "LOGIN"
+			    font_name : "poppins"
+			    md_bg_color: 0, 0, 0, 0.5
+			    text_color: 0, 0, 0, 1
+			    size_hint : None,None
+			    pos_hint : {"center_x" :0.5}
+			MDRaisedButton:
+			    text: "SIGNUP"
+			    font_name : "poppins"
+			    size_hint : None,None
+			    md_bg_color: 1, 1, 1, 0.01
+			    theme_text_color: "Custom"
+			    text_color: 0, 0, 0, 0.8
+			    line_color: 1, 1, 1, 1
+			    pos_hint : {"center_x" :0.5}
+			    line_width  : 2

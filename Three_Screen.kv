@@ -1,0 +1,140 @@
+#:import get_color_from_hex kivy.utils.get_color_from_hex
+ThreeScreen  :
+	name : "ThreeScreen"
+	MDBoxLayout :
+		orientation : "vertical"
+		spacing : dp(5)
+		MDBoxLayout :
+			orientation : "horizontal"
+			#md_bg_color : rgba(9,90,100,255)
+			size_hint : 1,0.1
+			padding : [dp(5),dp(5),dp(5),0]
+
+			MDLabel :
+		        text :"Mantojk"
+		        font_name : "Roboto"
+		        bold : True
+		        size_hint : 0.6,1
+		        color :"black"
+		        pos_hint : {"center_x":0.1}
+		        halign : 'center'
+		        font_style : "H5"
+		    MDBoxLayout :
+				orientation : "horizontal"
+				#md_bg_color : rgba(9,90,100,255)
+				size_hint : 0.7,0.15
+				padding : [dp(5),dp(5),dp(5),0]
+			FitImage :
+
+				source : "images/profile.png"
+				size_hint : 0.18,0.9
+				radius : [dp(22),dp(22),dp(22),dp(22)]
+		MDBoxLayout :
+			orientation : "horizontal"
+			#md_bg_color : rgba(9,90,50,255)
+			size_hint : 1,0.08
+			padding : [dp(5),0,0,0]
+			MDBoxLayout :
+				orientation : "vertical"
+				#md_bg_color : rgba(9,90,50,255)
+				size_hint : 0.7,1
+
+				canvas :
+	                Color :
+	                    rgb : 200/255,200/255,200/255,1
+	                RoundedRectangle :
+	                    size : self.size
+	                    pos : self.pos
+	                    radius: [10,10,10,10]
+	            TextInput:
+	                id : Input_Comment
+	                hint_text:  app.convert_Arab("بحث................................................")
+	                size_hint : 1 ,None
+	                pos_hint : {'center_x' :0.5 ,'center_y' :0.5}
+	                font_size : '15sp'
+	                font_name : 'font_02'
+	                height : self.minimum_height
+	                background_color : 0,0,0,0
+	                cursor_color : app.theme_cls.primary_dark
+	                cursor_width : '2sp'
+	                padding : 10
+	                multiline : False
+	                foreground : app.theme_cls.primary_dark
+
+	        MDBoxLayout :
+				orientation : "horizontal"
+				#md_bg_color : rgba(200,200,200,255)
+				size_hint : 0.2,1
+				MDIconButton:
+                    icon: "magnify"
+				    #md_bg_color : rgba(9,90,50,255)
+				    pos_hint : {'center_x' : 0.5,'center_y' : 0.5}
+		MDBoxLayout :
+			orientation : "vertical"
+			md_bg_color : rgba(200,200,200,255)
+			size_hint : 1,1
+			padding : dp(5)
+			MDLabel :
+				text : app.convert_Arab("خصائص")
+				font_name : 'font_02'
+			    font_size :'20sp'
+				size_hint: None,0.05
+				pos_hint : {"center_x": 0.1, "center_y" : 0.1}
+				bold :True
+				halign: "center"
+				color : get_color_from_hex('#000000')
+			MDBoxLayout :
+				orientation : "horizontal"
+				md_bg_color : rgba(200,200,200,255)
+				size_hint : 1,0.3
+				ScrollView :
+					do_scroll_x: True
+                    do_scroll_y: False
+	                GridLayout :
+	                    cols : 3
+			            spacing: dp(3)  # Adjust the spacing between items
+			            size_hint: None, 1
+			            width: self.minimum_width
+			            padding : dp(2)
+	                    MDCard :
+		                    orientation : "horizontal"
+		                    size_hint : None,1
+		                    width : "100dp"
+		                    radius : dp(5)
+		                MDCard :
+		                    orientation : "horizontal"
+		                    size_hint : None,1
+		                    width : "100dp"
+		                    radius : dp(5)
+		                MDCard :
+		                    orientation : "horizontal"
+		                    size_hint : None,1
+		                    width : "100dp"
+		                    radius : dp(5)
+			MDLabel :
+				text : app.convert_Arab("جديد")
+				font_name : 'font_02'
+			    font_size :'20sp'
+				size_hint: None,0.05
+				pos_hint : {"center_x": 0.1, "center_y" : 0.1}
+				bold :True
+				halign: "center"
+				color : get_color_from_hex('#000000')
+			ScrollView :
+	            MDList :
+	                spacing : dp(20)
+	                MDCard :
+	                    orientation : "vertical"
+	                    size_hint : 0.2,None
+	                    height : "150dp"
+	                    radius : dp(5)
+	                MDCard :
+	                    orientation : "vertical"
+	                    size_hint : 0.2,None
+	                    height : "150dp"
+	                    radius : dp(5)
+	                MDCard :
+	                    orientation : "vertical"
+	                    size_hint : 0.2,None
+	                    height : "150dp"
+	                    radius : dp(5)

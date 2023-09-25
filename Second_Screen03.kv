@@ -1,0 +1,129 @@
+#:import get_color_from_hex kivy.utils.get_color_from_hex
+SecondScreen03 :
+	name : "SecondScreen03"
+	MDBoxLayout :
+		orientation : "vertical"
+		size_hint : 1,1
+		MDIconButton:
+            icon: "arrow-left-bold"
+		    user_font_size :'30sp'
+		MDBoxLayout :
+			orientation : "vertical"
+			size_hint : 1,0.25
+			padding : [dp(20),0,0,dp(20)]
+			MDLabel :
+				text : app.convert_Arab("أهلاً!")
+				markup : True
+				font_name : 'font_01'
+			    font_size :'30sp'
+				size_hint: 1,0.4
+				bold :True
+				color : "black"
+			MDLabel :
+				text : app.convert_Arab(" إنشئ حساب جديد ")
+				markup : True
+				font_name : 'font_01'
+			    font_size :'20sp'
+				size_hint: 1,0.3
+				bold :True
+				color : get_color_from_hex('#454545')
+		MDBoxLayout :
+			orientation : "vertical"
+			size_hint : 1,0.55
+			padding : [dp(30),0,0,dp(30)]
+			MDTextField:
+                hint_text: app.convert_Arab(" اسم المستخدم  ")
+                font_name_hint_text : "font_02"
+                size_hint : 0.8,None
+            MDTextField:
+                hint_text:app.convert_Arab( "جمايل او رقم الهاتف " )
+                size_hint : 0.8,None
+                font_name_hint_text : "font_02"
+            MDTextField:
+                hint_text:app.convert_Arab( "كلمة المرور " )
+                size_hint : 0.8,None
+                font_name_hint_text : "font_02"
+        MDBoxLayout :
+			orientation : "vertical"
+			size_hint : 1,0.1
+			padding : [0,dp(1),0,0]
+			Button
+                text : app.convert_Arab("تسجيل")
+                background_color : 0,0,0,0
+                font_name : 'font_01'
+                font_size :'20sp'
+                size_hint :0.4,0.15
+                pos_hint : {"center_x": 0.5,'center_y': 0.5}
+                on_release :
+                    root.manager.transition.direction ='left'
+                    root.manager.current ='SecondScreen01'
+                canvas.before :
+                    Color :
+                        rgb : rgba(9,90,17,255)
+                    RoundedRectangle :
+                        size : self.size
+                        pos : self.pos
+                        radius : [10]
+		MDBoxLayout :
+			orientation : "horizontal"
+			size_hint : 1,0.1
+			padding : [dp(50),0,dp(50),dp(2)]
+			MDBoxLayout :
+				orientation : "vertical"
+				size_hint : 1,0.05
+				md_bg_color  : get_color_from_hex("#000000")
+		MDBoxLayout :
+			orientation : "horizontal"
+			size_hint : 1,0.2
+			#md_bg_color  : get_color_from_hex("#000785")
+			MDLabel :
+				text : app.convert_Arab("  تسجيل عبر :  ")
+				markup : True
+				font_name : 'font_01'
+			    font_size :'16sp'
+				size_hint: 1,0.4
+				bold :True
+				halign : "center"
+				color : get_color_from_hex('#454545')
+		MDBoxLayout :
+			orientation : "horizontal"
+			size_hint : 1,0.2
+			#md_bg_color  : get_color_from_hex("#000785")
+			padding : [dp(80),0,0,0]
+			MDIconButton :
+				icon : "google-chrome"
+				user_font_size : "40sp"
+				theme_text_color : "Custom"
+				text_color :  (23, 169, 253)
+			MDIconButton :
+				icon : "facebook"
+				user_font_size : "40sp"
+				theme_text_color : "Custom"
+				text_color : get_color_from_hex('#0165E1')
+				pos_hint_x : {"center_x" : 0.5}
+			MDIconButton :
+				icon : "apple"
+				user_font_size : "40sp"
+				theme_text_color : "Custom"
+				text_color : get_color_from_hex('#000000')
+				pos_hint_x : {"center_x" : 0.5}
+		MDBoxLayout :
+			orientation : "horizontal"
+			size_hint : 1,0.2
+			MDBoxLayout :
+				orientation : "horizontal"
+				size_hint : 0.13,0.2
+			MDTextButton:
+			    text: app.convert_Arab("دخول")
+			    size_hint : 0.078,None
+			    custom_color: 0, 1, 0, 1
+			    font_name : 'font_01'
+			    pos_hint : {"center_x" : 1,"center_y" : 0.5}
+			MDLabel :
+				text : app.convert_Arab("   بالفعل لديك حساب ؟   ")
+				markup : True
+				font_name : 'font_01'
+			    font_size :'13sp'
+				size_hint: 0.4,1
+				bold :True
+				color : get_color_from_hex('#454545')
